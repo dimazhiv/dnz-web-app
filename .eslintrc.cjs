@@ -21,6 +21,7 @@ module.exports = {
       project: './tsconfig.json',
     },
     rules: {
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
       'no-use-before-define': 'off',
       '@typescript-eslint/no-use-before-define': ['error', {
         functions: false,
