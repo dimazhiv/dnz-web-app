@@ -1,12 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'none',
-  devtool: 'source-map',
   entry: './src/index.tsx',
-  target: 'web',
+  mode: 'production',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   output: {
     path: path.resolve('public'),
@@ -23,10 +21,10 @@ module.exports = {
       },
       {
         test: /\.ts$|tsx/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
-        exclude: '/node_modules/',
       },
     ],
   },
