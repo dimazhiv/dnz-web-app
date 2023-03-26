@@ -3,5 +3,5 @@ import { UserData } from './UserData';
 
 export interface NormalizedUsers {
   byId: ById<UserData>;
-  usersIds: UserIds;
+  userIds: UserIds;
 }
