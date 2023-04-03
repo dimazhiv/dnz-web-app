@@ -1,0 +1,9 @@
+.UserCard {
+    min-width: 180px;
+    border: 1px solid red;
+}
+
+.CardSubTitle {
+    color: grey;
+}
+

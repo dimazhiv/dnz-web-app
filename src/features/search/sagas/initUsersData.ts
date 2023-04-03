@@ -1,14 +1,14 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 import { NormalizedUsers } from '../../../types/NormalizedUsers';
+import { loadUsersData } from '../../services';
 import { initUsersData } from '../sagaActions';
 import { setUsers } from '../slice';
 
-const loadUsers = () => {};
 export function* _initUsersData() {
   console.log('----saga racers._initUsersData saga-----');
   try {
-    const users = (yield call(loadUsers)) as NormalizedUsers;
+    const users = (yield call(loadUsersData)) as NormalizedUsers;
     yield put(setUsers(users));
   } catch (error) {
     console.error(error);

@@ -1,27 +1,10 @@
 import { getUsersData } from './mockServerEndpoint';
+import { UserData } from '../types/UserData';
 
 export async function fetchUsersData() {
-  let response;
-  try {
-    await getUsersData((data) => {
-      response = data;
-    });
-    return response;
-  } catch (error) {
-    throw error;
-  }
+  let response: UserData[] = [];
+  await getUsersData((data: any) => {
+    response = data;
+  });
+  return response;
 }
-//
-// export async function loadPhotosList(): Promise<NormalizedPhotos> {
-//   try {
-//     const photos = await fetchPhotosList();
-//     const photosIds = photos ? photos.map((item) => item.id) : [];
-//     const byId = photos.reduce((acc: { [key: string]: PhotoData }, item) => {
-//       acc[item.id] = item;
-//       return acc;
-//     }, {});
-//     return { byId, photosIds };
-//   } catch (error) {
-//     throw error;
-//   }
-// }

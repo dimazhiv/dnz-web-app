@@ -1,2 +1,2 @@
 export type ById<T> = { [key: string]: T };
-export type UserIds = string[];
+export type UserIds = number[];
