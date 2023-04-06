@@ -34,7 +34,7 @@ const StyledInputBase = styled(InputBase)(() => ({
 }));
 
 export type SearchFieldProps = {
-  onSearchPress: (id: string) => void;
+  onSearchPress: (searchValue: string) => void;
 };
 
 export default function SearchField({ onSearchPress }: SearchFieldProps) {

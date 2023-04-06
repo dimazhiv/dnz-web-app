@@ -1,10 +1,17 @@
-import { getUsersData } from './mockServerEndpoint';
+import { getPositionData, getUsersData } from './mockServerEndpoint';
 import { UserData } from '../types/UserData';
+import { UserPosition } from '../types/UserPosition';
 
 export async function fetchUsersData() {
-  let response: UserData[] = [];
+  let responseUsers: UserData[] = [];
+  let responsePositions: UserPosition[] = [];
   await getUsersData((data: any) => {
-    response = data;
+    responseUsers = data;
   });
-  return response;
+  await getPositionData((data: any) => {
+    responsePositions= data;
+  });
+
+
+  return responseUsers;
 }
